@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buono Cookies | Checkout</title>
+
+    <link rel="stylesheet" href="checkout.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="preload" href="img/logo_header.png" as="image">
+    <link rel="preload" href="img/bg-pattern.png" as="image">
+    <link rel="preload" href="img/tradicional.jpg" as="image">
+    <link rel="preload" href="img/nutella.jpg" as="image">
+    <link rel="preload" href="img/checout_pagamento.png" as="image">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo_header.png" alt="Buono Cookies Logo" />
+            </a>
+        </div>
+
+        <div class="cart-icon">
+            <a href="checkout.html" aria-label="Carrinho">
+                <i class="bi bi-cart3"></i>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="#about">Sobre Nós</a></li>
+                <li><a href="#order">Cardápio</a></li>
+            </ul>
+
+            <div class="mobile-menu-socials">
+                <a href="https://www.instagram.com/buonocookie/" target="_blank" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://wa.me/5512991030948" target="_blank" aria-label="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="checkout">
+        <div class="checkout-container">
+            <h1>Finalizar Pedido</h1>
+            <p class="order-id">Pedido nº <span id="order-id"></span></p>
+
+            <div class="cart-items" id="cart-items" aria-live="polite"></div>
+
+            <div id="cart-suggestions" class="cart-suggestions"></div>
+
+            <div class="cart-summary" role="region" aria-label="Resumo do pedido">
+                <h2>Resumo</h2>
+                <p class="total">Total: <strong id="cart-total">R$ 0,00</strong></p>
+
+                <div class="customer-name">
+                    <label for="customer-name">Seu nome:</label>
+                    <input type="text" id="customer-name" placeholder="Como gostaria de ser chamado(a)" required>
+                </div>
+
+                <div class="payment-section">
+                    <label for="payment-method">Forma de pagamento:</label>
+
+                    <select id="payment-method" class="payment-method" disabled>
+                        <option value="pix" selected>PIX</option>
+                        <option value="dinheiro">Dinheiro</option>
+                        <option value="cartao">Cartão</option>
+                    </select>
+                </div>
+
+                <button class="btn order-btn" id="open-pix-modal">Ir para Pagamento PIX</button>
+            </div>
+
+
+        </div>
+    </main>
+
+    <div class="back-home-button-container">
+        <a href="index.html" class="btn-home">
+            <i class="bi bi-house-door-fill"></i>
+            Voltar para a Página Inicial
+        </a>
+    </div>
+
+    <div class="pix-modal-overlay" id="pix-modal">
+        <div class="pix-modal-content">
+            <button class="pix-modal-close" id="pix-modal-close" aria-label="Fechar">&times;</button>
+            <h2>Quase lá!</h2>
+            <p>Para confirmar, pague <strong id="pix-total-modal">R$ 0,00</strong> via PIX e envie o comprovante.</p>
+
+            <div class="pix-details">
+                <img src="img/checout_pagamento.png" alt="Checkout Buono">
+
+                <div class="pix-copy-wrapper">
+                    <input type="text"
+                        value="00020126360014br.gov.bcb.pix0114+55129974177035204000053039865802BR5925JENYFFER MOREIRA DE OLIVE6009Sao Paulo62290525REC6913B3038CAF53528608846304BB4F"
+                        id="pix-key" readonly>
+                    <button id="copy-pix-key-inline" aria-label="Copiar chave PIX">
+                        <i class="bi bi-clipboard"></i>
+                    </button>
+                </div>
+
+                <button id="copy-pix-key">
+                    <i class="bi bi-clipboard"></i> Copiar Chave
+                </button>
+            </div>
+
+            <p class="pix-instructions">Após pagar, clique abaixo para enviar seu pedido e o comprovante no WhatsApp.
+            </p>
+
+            <a href="#" class="btn order-btn" id="finalize-order-whatsapp">
+                <i class="bi bi-whatsapp"></i>
+                Enviar Comprovante e Pedido
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/buonocookie/" target="_blank" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://wa.me/5512991030948" target="_blank" aria-label="WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
+
+        <p>© 2025 Buono Cookies — Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="checkout.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("mobile-menu");
+            const body = document.body;
+
+            function openMenu() {
+                menu.classList.add("active");
+                toggle.classList.add("open");
+                body.classList.add("menu-open");
+                menu.setAttribute("aria-hidden", "false");
+            }
+
+            function closeMenu() {
+                menu.classList.remove("active");
+                toggle.classList.remove("open");
+                body.classList.remove("menu-open");
+                menu.setAttribute("aria-hidden", "true");
+            }
+
+            toggle.addEventListener("click", () => {
+                menu.classList.contains("active") ? closeMenu() : openMenu();
+            });
+
+            document.querySelectorAll(".mobile-menu a").forEach(link => {
+                link.addEventListener("click", e => {
+                    const href = link.getAttribute("href");
+                    e.preventDefault();
+                    closeMenu();
+
+                    setTimeout(() => {
+                        // Navegação direta, pois não há rolagem nesta página
+                        window.location.href = href;
+                    }, 300);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
