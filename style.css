@@ -1020,7 +1020,7 @@ body.menu-open {
 
 @media (max-width: 768px) {
 
-    #copy-pix-key {
+    .pix-details #copy-pix-key {
         font-size: 1.1rem !important;
         padding: 12px 20px !important;
         width: 100% !important;
@@ -1432,4 +1432,5 @@ footer {
 .mobile-menu-socials a:hover {
     color: var(--accent);
     transform: scale(1.1);
+
 }
