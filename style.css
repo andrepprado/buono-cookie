@@ -329,6 +329,15 @@ footer {
 
 
 @media (max-width: 768px) {
+
+    .pix-details #copy-pix-key {
+        font-size: 1.1rem !important;
+        padding: 12px 20px !important;
+        width: 100% !important;
+        height: 50% !important;
+        border-radius: 10px !important;
+    }
+
     body {
         background: #fff9f4;
         font-size: 0.95rem;
@@ -1019,17 +1028,6 @@ body.menu-open {
 
 
 @media (max-width: 768px) {
-
-    .pix-details #copy-pix-key {
-        font-size: 1.1rem !important;
-        padding: 12px 20px !important;
-        width: 100% !important;
-        height: 50% !important;
-        border-radius: 10px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
 
     .checkout {
         padding: 100px 15px 40px;
