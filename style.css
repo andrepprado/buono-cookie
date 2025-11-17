@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
-/* ===========================================================
-   BASE E DESKTOP (PADRÃO)
-   =========================================================== */
-
-/* Reset e base */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +23,6 @@ body {
     width: 100%
 }
 
-/* Header fixo */
 .header {
     position: fixed;
     top: 0;
@@ -51,7 +45,6 @@ body {
     transition: 0.3s ease;
 }
 
-/* Hero */
 .hero {
     position: relative;
     height: 100vh;
@@ -97,7 +90,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Botão CTA */
 .cta {
     display: inline-flex;
     align-items: center;
@@ -117,7 +109,6 @@ body {
     transform: scale(1.03);
 }
 
-/* Cookie girando */
 .cookie-spin {
     width: 22px;
     height: 22px;
@@ -136,7 +127,6 @@ body {
     }
 }
 
-/* Seções principais */
 .section {
     display: flex;
     align-items: center;
@@ -170,7 +160,6 @@ body {
     text-align: center;
 }
 
-/* Botão genérico das seções */
 .section .btn {
     background: #a25b39;
     color: #fff;
@@ -192,12 +181,9 @@ footer {
     color: #fff;
     text-align: center;
     padding: 25px;
-
-    /* CORREÇÃO FOOTER: Empurra o rodapé para o fim da página */
     margin-top: auto;
 }
 
-/* ====== CARDÁPIO GRID ====== */
 .section-3 {
     background: #f7f1e8;
     padding: 80px 20px;
@@ -241,7 +227,6 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Texto dos cards */
 .menu-info {
     padding: 20px;
 }
@@ -271,7 +256,6 @@ footer {
     color: #a25b39;
 }
 
-/* Botão Adicionar */
 .add-btn {
     background: #a25b39;
     color: #fff;
@@ -291,7 +275,6 @@ footer {
     transform: scale(1.05);
 }
 
-/* Botão principal */
 .order-btn {
     margin-top: 50px;
     background: #a25b39;
@@ -313,7 +296,6 @@ footer {
     transform: scale(1.05);
 }
 
-/* ====== ANIMAÇÃO LENTA DAS IMAGENS ====== */
 .menu-photo {
     width: 100%;
     height: 220px;
@@ -345,9 +327,6 @@ footer {
 
 
 
-/* ===========================================================
-   MOBILE (≤ 768px)
-   =========================================================== */
 
 @media (max-width: 768px) {
     body {
@@ -425,8 +404,6 @@ footer {
     .menu-card {
         border-radius: 10px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-
-        /* CORREÇÃO BOTÕES CORTADOS: Impede que o 'space-between' empurre o conteúdo */
         justify-content: flex-start;
     }
 
@@ -460,7 +437,6 @@ footer {
         font-size: 0.9rem;
     }
 
-    /* CORREÇÃO LAYOUT BOTÕES MOBILE: Faz os botões quebrarem a linha */
     .menu-footer {
         flex-wrap: wrap;
         gap: 12px;
@@ -482,7 +458,6 @@ footer {
         min-width: 120px;
     }
 
-    /* Fim da correção */
 
 
     .order-btn {
@@ -521,7 +496,6 @@ footer {
         }
     }
 
-    /* ==== AJUSTES ESPECÍFICOS PARA O CHECKOUT (mobile) ==== */
     .checkout {
         width: 100%;
         margin: 80px auto 40px;
@@ -657,9 +631,7 @@ footer {
 
 }
 
-/* ===========================================================
-   MENU HAMBURGUER — FULLSCREEN COM ANIMAÇÃO SUAVE
-   =========================================================== */
+
 
 .mobile-menu {
     position: fixed;
@@ -736,7 +708,6 @@ body.menu-open {
 
 
 
-/* ======== BOTÃO HAMBURGUER — CORREÇÃO FINAL E NÍTIDA ======== */
 .menu-toggle {
     position: relative;
     width: 30px;
@@ -749,7 +720,6 @@ body.menu-open {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Barras do ícone */
 .menu-toggle .bar {
     position: absolute;
     left: 0;
@@ -760,7 +730,6 @@ body.menu-open {
     transition: transform 0.35s ease, opacity 0.25s ease, top 0.3s ease;
     transform-origin: center center;
 
-    /* 🔹 Correções visuais e anti-aliasing */
     backface-visibility: hidden;
     transform-style: preserve-3d;
     will-change: transform, opacity, top;
@@ -769,7 +738,6 @@ body.menu-open {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Posições exatas das barras */
 .menu-toggle .bar:nth-child(1) {
     top: 4px;
 }
@@ -782,7 +750,6 @@ body.menu-open {
     top: 16px;
 }
 
-/* Estado "X" (aberto) */
 .menu-toggle.open .bar:nth-child(1) {
     top: 10px;
     transform: rotate(45deg);
@@ -798,7 +765,6 @@ body.menu-open {
 }
 
 
-/* Carrinho no header */
 .cart-icon {
     position: relative;
     margin-right: 20px;
@@ -827,7 +793,6 @@ body.menu-open {
     justify-content: center;
 }
 
-/* Contador de quantidade */
 .quantity {
     display: flex;
     align-items: center;
@@ -852,10 +817,6 @@ body.menu-open {
 }
 
 
-/* ===========================================================
-   CHECKOUT — VERSÃO AJUSTADA E INTEGRADA
-   =========================================================== */
-
 .checkout {
     width: 100%;
     min-height: 100vh;
@@ -866,7 +827,6 @@ body.menu-open {
     padding: 120px 20px;
 }
 
-/* Container principal do checkout */
 .checkout-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -879,7 +839,6 @@ body.menu-open {
     padding: 30px;
 }
 
-/* Título e ID do pedido */
 .checkout-container h1 {
     grid-column: 1 / -1;
     text-align: center;
@@ -895,9 +854,7 @@ body.menu-open {
     margin-bottom: 25px;
 }
 
-/* ==============================
-   LISTAGEM DE ITENS
-   ============================== */
+
 .cart-items {
     display: flex;
     flex-direction: column;
@@ -936,7 +893,6 @@ body.menu-open {
     font-weight: 600;
 }
 
-/* Quantidade e subtotal */
 .quantity {
     display: flex;
     align-items: center;
@@ -990,9 +946,6 @@ body.menu-open {
     color: #8d4c30;
 }
 
-/* ==============================
-   RESUMO E PAGAMENTO
-   ============================== */
 .cart-summary {
     background: #fff9f4;
     padding: 20px;
@@ -1016,7 +969,6 @@ body.menu-open {
     margin-bottom: 25px;
 }
 
-/* Formulários */
 .payment-section,
 .customer-name {
     margin-bottom: 20px;
@@ -1040,7 +992,6 @@ body.menu-open {
     font-size: 0.9rem;
 }
 
-/* Botão Finalizar */
 .btn.order-btn {
     width: 100%;
     padding: 14px;
@@ -1058,9 +1009,7 @@ body.menu-open {
     transform: scale(1.02);
 }
 
-/* ==============================
-   VAZIO
-   ============================== */
+
 .empty {
     text-align: center;
     color: #5a4234;
@@ -1068,10 +1017,20 @@ body.menu-open {
     padding: 40px 0;
 }
 
-/* ===========================================================
-   RESPONSIVIDADE DO CHECKOUT (incorporada na sua @media existente)
-   =========================================================== */
+
 @media (max-width: 768px) {
+
+    #copy-pix-key {
+        font-size: 1.1rem !important;
+        padding: 12px 20px !important;
+        width: 100% !important;
+        height: 50% !important;
+        border-radius: 10px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
     .checkout {
         padding: 100px 15px 40px;
     }
@@ -1124,15 +1083,7 @@ body.menu-open {
     }
 }
 
-/* ==================================================================
-   CHECKOUT FIX — 2025-11-10
-   Objetivo: linha horizontal
-   Estrutura visual: [mini imagem] [nome do produto] [preço unitário] [− + contador] [subtotal] [lixeira]
-   Mantém todo o restante do CSS intacto (nenhuma remoção).
-   Linhas originais preservadas: 1149
-   ================================================================== */
 
-/* Layout horizontal do item do carrinho */
 .checkout .cart-item {
     display: grid;
     grid-template-columns: 64px minmax(180px, 1fr) 150px 160px 130px 48px;
@@ -1145,7 +1096,6 @@ body.menu-open {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Mini imagem do produto */
 .checkout .cart-item>img {
     width: 64px;
     height: 64px;
@@ -1154,7 +1104,6 @@ body.menu-open {
     justify-self: start;
 }
 
-/* Bloco com nome + preço unitário em duas colunas internas */
 .checkout .cart-item .item-info {
     margin: 0;
     display: grid;
@@ -1163,7 +1112,6 @@ body.menu-open {
     gap: 6px 16px;
 }
 
-/* Nome do produto alinhado à esquerda */
 .checkout .cart-item .item-info h3 {
     margin: 0;
     font-size: 1rem;
@@ -1172,7 +1120,6 @@ body.menu-open {
     grid-column: 1 / 2;
 }
 
-/* Preço unitário isolado na 2ª coluna interna */
 .checkout .cart-item .item-info .price {
     grid-column: 2 / 3;
     justify-self: end;
@@ -1181,7 +1128,6 @@ body.menu-open {
     white-space: nowrap;
 }
 
-/* Coluna de quantidade: botões - e + com contador 1 a 30 (apenas estilo) */
 .checkout .cart-item .quantity {
     justify-self: center;
     display: inline-flex;
@@ -1217,7 +1163,6 @@ body.menu-open {
     color: #3a2313;
 }
 
-/* Subtotal (coluna própria) */
 .checkout .cart-item .item-actions {
     justify-self: end;
     text-align: right;
@@ -1233,7 +1178,6 @@ body.menu-open {
     white-space: nowrap;
 }
 
-/* Ícone de lixeira (coluna própria) */
 .checkout .cart-item .item-actions .remove {
     justify-self: end;
     font-size: 1.25rem;
@@ -1249,20 +1193,14 @@ body.menu-open {
     transform: scale(1.05);
 }
 
-/* Tabela responsiva do carrinho no container do checkout */
 .checkout .cart-items {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-/* Alinhamentos do header/resumo permanecem como estavam */
 
-/* ======================
-   Responsividade
-   ====================== */
 
-/* Quebra compacta em telas médias */
 @media (max-width: 992px) {
     .checkout .cart-item {
         grid-template-columns: 56px minmax(160px, 1fr) 120px 130px 110px 44px;
@@ -1279,7 +1217,6 @@ body.menu-open {
     }
 }
 
-/* Mobile: pode quebrar em duas linhas mantendo alinhamento limpo e compacto */
 @media (max-width: 640px) {
     .checkout .cart-item {
         grid-template-columns: 56px minmax(120px, 1fr) 1fr 44px;
@@ -1320,7 +1257,6 @@ body.menu-open {
     }
 }
 
-/* Mobile estreito extra (ex.: <380px): aperta espaços sem quebrar a hierarquia */
 @media (max-width: 380px) {
     .checkout .cart-item {
         grid-template-columns: 48px minmax(100px, 1fr) 1fr 40px;
@@ -1343,30 +1279,17 @@ body.menu-open {
 }
 
 
-/* =======================================================
-   FIX: SEÇÃO 'SOBRE NÓS' (SECTION-1)
-   ======================================================= */
 
-/* 1. SEÇÃO PAI (CORREÇÃO FINAL)
-   - Adiciona um padding interno para dar "altura" (remove os retângulos)
-   - Aplica o FUNDO CONTÍNUO AQUI
-*/
 .section-1.section {
     min-height: auto !important;
     justify-content: center;
     align-items: stretch;
     padding: 60px 0;
-    /* 👈 ALTURA DA SEÇÃO */
     background: linear-gradient(rgba(255, 249, 244, 0.85), rgba(255, 249, 244, 0.85)), url('img/bg-pattern.png');
     background-size: 400px;
-    /* 👈 ZOOM DO PATTERN */
     background-position: center;
 }
 
-/* 2. LADO ESQUERDO (TEXTO)
-   - Zera o padding
-   - Deixa o fundo TRANSPARENTE
-*/
 .section-1.section .content {
     padding: 0 !important;
     display: flex;
@@ -1375,10 +1298,6 @@ body.menu-open {
     background: transparent !important;
 }
 
-/* 3. LADO DIREITO (IMAGEM)
-   - Zera o padding
-   - Deixa o fundo TRANSPARENTE
-*/
 .section-1 .image-side {
     display: flex;
     justify-content: center;
@@ -1388,7 +1307,6 @@ body.menu-open {
     height: auto !important;
 }
 
-/* 4. Estiliza o "card" branco/laranja do texto */
 .section-1 .content-box {
     background: rgba(255, 249, 244, 0.95);
     padding: 40px;
@@ -1397,30 +1315,24 @@ body.menu-open {
     max-width: 550px;
     text-align: left;
     margin: 0 20px;
-    /* Margem interna para não colar nas bordas */
 }
 
-/* 5. Estiliza o ícone do cookie dentro do card */
 .section-1 .content-box-icon {
     width: 50px;
     height: 50px;
     margin-bottom: 15px;
 }
 
-/* 6. Estiliza o mascote */
 .section-1 .mascote-image {
     width: 280px;
     height: auto;
     max-width: 100%;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
     margin: 0 20px;
-    /* Margem interna para não colar nas bordas */
 }
 
 
-/* BÔNUS: Se a section-2 também for 50/50, 
-   adicione esta regra para remover o padding dela também.
-*/
+
 .section-2.section .content {
     padding: 0 !important;
     display: flex;
@@ -1428,23 +1340,17 @@ body.menu-open {
     align-items: center;
 }
 
-/* 7. Estilo do link do Instagram (Seção Sobre Nós) */
 .section-1 .instagram-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     margin-top: 25px;
-    /* Dá espaço do parágrafo acima */
     padding: 10px 18px;
     text-decoration: none;
     color: #a25b39;
-    /* Cor principal */
     background-color: rgba(255, 255, 255, 0.7);
-    /* Fundo levemente transparente */
     border: 1px solid #f0e2d4;
-    /* Borda sutil */
     border-radius: 25px;
-    /* Pílula */
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.3s ease;
@@ -1454,7 +1360,6 @@ body.menu-open {
     background-color: #fff;
     color: #3a2313;
     border-color: #a25b39;
-    /* Destaca a borda no hover */
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -1463,7 +1368,6 @@ body.menu-open {
     font-size: 1.1rem;
 }
 
-/* 8. ÍCONES DE MÍDIA SOCIAL NO RODAPÉ (Alinhados à Direita) */
 footer {
     background: #3b2514;
     color: #fff;
@@ -1495,7 +1399,6 @@ footer {
     transform: scale(1.1);
 }
 
-/* Ajuste para telas pequenas */
 @media (max-width: 768px) {
 
     .footer-socials {
@@ -1510,29 +1413,23 @@ footer {
     }
 }
 
-/* =======================================================
-   10. ÍCONES SOCIAIS NO MENU HAMBURGUER
-   ======================================================= */
+
 .mobile-menu-socials {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
     margin-top: 40px;
-    /* Espaço acima dos ícones */
 }
 
 .mobile-menu-socials a {
     color: var(--text);
-    /* Usa a cor de texto do menu */
     font-size: 1.8rem;
-    /* Tamanho do ícone */
     text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .mobile-menu-socials a:hover {
     color: var(--accent);
-    /* Cor de destaque ao passar o mouse */
     transform: scale(1.1);
 }
