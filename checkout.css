@@ -1029,7 +1029,6 @@ footer {
     background: var(--bg);
     overflow: hidden;
     margin-bottom: 10px;
-    /* Espaço antes do botão 'Copiar Chave' */
 }
 
 /* O input de texto (sem borda) */
@@ -1044,9 +1043,7 @@ footer {
     outline: none;
     margin: 0;
     padding-right: 45px;
-    /* Espaço para o botão-ícone */
     transition: all 0.2s ease;
-    /* Para o feedback */
 }
 
 /* O botão-ícone (dentro da caixa) */
@@ -1056,7 +1053,6 @@ footer {
     top: 0;
     height: 100%;
     width: 45px;
-    /* Largura fixa para o ícone */
     border: none;
     background: transparent;
     color: var(--muted);
@@ -1074,24 +1070,25 @@ footer {
     color: var(--text);
 }
 
-/* 👇 NOVO: Feedback 'Copiado' MINIMALISTA 👇 */
+/* Feedback Copiado */
 .pix-copy-wrapper input#pix-key.copied {
     color: #008a00;
-    /* Verde sucesso */
     font-weight: 600;
     border-color: #008a00;
-    /* Borda sólida verde */
     border-style: solid;
 }
 
 .pix-copy-wrapper button#copy-pix-key-inline .bi-check-lg {
     color: #008a00;
-    /* Verde sucesso */
     font-size: 1.3rem;
 }
 
 
-/* O botão principal 'Copiar Chave' (Estilo .btn.order-btn) */
+/* =======================================================
+   BOTÃO PRINCIPAL COPIAR CHAVE — UPGRADE UX
+   ======================================================= */
+
+/* ANTIGO (mantido comentado)
 .pix-details #copy-pix-key {
     width: 20%;
     padding: 8px 12px;
@@ -1108,18 +1105,75 @@ footer {
     justify-content: center;
     gap: 6px;
 }
+*/
 
+.pix-details #copy-pix-key {
+
+    width: 100%;
+    margin-top: 14px;
+
+    padding: 16px 20px;
+    font-size: 1.15rem;
+    font-weight: 700;
+
+    border-radius: 12px;
+    border: none;
+
+    background: linear-gradient(135deg, #a25b39, #8d4c30);
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 25px rgba(162, 91, 57, 0.35);
+
+    transition:
+        transform .15s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+/* ANTIGO hover comentado
 .pix-details #copy-pix-key:hover {
     background: #8d4c30;
     transform: translateY(-1px);
 }
+*/
 
+.pix-details #copy-pix-key:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(162, 91, 57, 0.45);
+}
+
+/* ANTIGO active comentado
 .pix-details #copy-pix-key:active {
     transform: scale(0.98);
 }
+*/
 
+.pix-details #copy-pix-key:active {
+    transform: scale(0.96);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ANTIGO tamanho ícone comentado
 .pix-details #copy-pix-key i {
     font-size: 1.1rem;
+}
+*/
+
+.pix-details #copy-pix-key i {
+    font-size: 1.45rem;
+}
+
+/* estado sucesso */
+.pix-details #copy-pix-key.copied {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4);
 }
 
 
