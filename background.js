@@ -1,7 +1,7 @@
 const heroImages = [
-    './img/background/hero1.png',
-    './img/background/hero2.png',
-    './img/background/hero3.png'
+    './img/background/webp/hero1.webp',
+    './img/background/webp/hero2.webp',
+    './img/background/webp/hero3.webp'
 ];
 
 let currentIndex = 0;
