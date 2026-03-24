@@ -54,11 +54,30 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const resolveImagePath = (imgPath) => {
-        if (!imgPath) return "img/tradicional_gmni.png";
-        if (imgPath.startsWith("/") || imgPath.startsWith("http")) return imgPath;
-        if (imgPath.startsWith("./")) return imgPath.replace("./", "");
-        if (imgPath.startsWith("img/")) return imgPath;
-        return "img/" + imgPath;
+
+        // fallback absoluto
+        if (!imgPath) return "img/webp/tradicional_gmni.webp";
+
+        // já é url completa
+        if (imgPath.startsWith("http") || imgPath.startsWith("/"))
+            return imgPath;
+
+        // já está correto em webp
+        if (imgPath.includes("img/webp/"))
+            return imgPath;
+
+        // veio só o nome do arquivo
+        if (!imgPath.includes("/"))
+            return "img/webp/" + imgPath.replace(/\.(png|jpg|jpeg)$/i, ".webp");
+
+        // veio caminho antigo tipo img/xxx.png
+        if (imgPath.startsWith("img/"))
+            return imgPath
+                .replace("img/", "img/webp/")
+                .replace(/\.(png|jpg|jpeg)$/i, ".webp");
+
+        // fallback final
+        return "img/webp/tradicional_gmni.webp";
     };
 
     // ---------- Sugestões ----------
