@@ -22,12 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ---------- Catálogo ----------
     const PRODUCTS = [
-        { name: "Cookie Tradicional", price: 10.00, image: "img/webp/tradicional_gmni.webp" },
-        { name: "Cookie de Nutella", price: 12.50, image: "img/webp/nutella_gmni.webp" },
-        { name: "Cookie Bueno", price: 12.50, image: "img/webp/bueno.webp" },
-        { name: "Cookie de Pote - Cheesecake", price: 19.00, image: "img/webp/morango_pote_gmni.webp" },
+        {
+            name: "Cookie Tradicional", price: 12.50, image: "img/webp/tradicional_gmni.webp"
+        },
+        {
+            name: "Cookie de Nutella", price: 15.00, image: "img/webp/nutella_gmni.webp"
+        },
+        {
+            name: "Cookie Bueno", price: 15.00, image: "img/webp/bueno.webp"
+        }
+        /*{ name: "Cookie de Pote - Cheesecake", price: 19.00, image: "img/webp/morango_pote_gmni.webp" },
         { name: "Cookie de Pote - Ovomaltine", price: 21.50, image: "img/webp/ovomaltine_pote_gmni.webp" },
-        { name: "Cookie de Pote - Bueno", price: 21.50, image: "img/webp/bueno_pote_gmni.webp" }
+        { name: "Cookie de Pote - Bueno", price: 21.50, image: "img/webp/bueno_pote_gmni.webp" }*/
     ];
 
     const getProduct = (name) => PRODUCTS.find(p => p.name === name);
